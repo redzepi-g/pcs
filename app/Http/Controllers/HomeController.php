@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use Carbon\Carbon;
 use App\User;
 
 class HomeController extends Controller
@@ -24,10 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $userTz = Auth::user()->timezone;
-        $time = Carbon::now();
-        $date = Carbon::createFromFormat('Y-m-d H:i:s', $time, 'Europe/Belgrade');
-        $date->setTimezone('Asia/Singapore');
-        return view('home');
+        $user_id = Auth::user()->id;
+        $user = User::find($user_id);
+
+        return view('home')->with('team',$user->team);
     }
 }

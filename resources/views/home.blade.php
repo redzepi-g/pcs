@@ -1,23 +1,41 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+@section('maincontent')
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<div class="row"> <!-- main row start -->
 
-                    You are logged in!
-                </div>
+
+    <!-- basic user info -->
+    <div class="col-md-12"> <!-- col start -->
+        <h2>Welcome {{Auth::user()->name}}</h2>
+        <h5>You belong to Team: {{$team}}</h5>
+        <!-- log out button -->
+    <a class="dropdown-item" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+         {{ __('Logout') }}
+     </a>
+     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+         @csrf
+     </form>
+
+    </div> <!-- col end -->
+
+
+</div><!-- main row end -->
+
+<div class="row"><!-- functions row -->
+
+    <div class="col-md-12"><!-- sub col -->
+        <div class="row"> <!-- sub row -->
+
+            <div class="col-md-6">
+                <button class="btn btn-primary">Create a team</button>
+                <button class="btn btn-primary">Join a team</button>
             </div>
-        </div>
-    </div>
-</div>
-@endsection
+
+        </div><!-- sub row end -->
+    </div><!-- sub col end -->
+</div> <!-- functions row end -->
+
+@stop
