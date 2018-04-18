@@ -33,6 +33,7 @@ class User extends Authenticatable
     }
 
     public function teams(){
-        return $this->belongsTo('App\Team','users_teams','user_id','team_id');
+        
+        return $this->belongsToMany('App\Team');
     }
 }

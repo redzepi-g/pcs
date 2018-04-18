@@ -5,27 +5,32 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
+use App\User;
+
+
 class BaseController extends Controller
 {
     
 
     public function index(){
 
-        $test = Carbon::now();
+        
+        $meetings = User::find(1)->meetings;
 
-        $timestamp = '2014-02-06 14:00:00';
-        $date = Carbon::createFromFormat('Y-m-d H:i:s', $test, 'Europe/Belgrade');
-        $date->setTimezone('Asia/Singapore');
+        foreach($meetings as $meeting){
 
-        echo $date." This is Belgrade to Singapore Conversion ";
+            echo $meeting->team;
+            echo "<br/>";
+            echo $meeting->basetime;
+        }
+
         echo "<br/>";
-        echo $test;
+        echo "-------------------------------";
         echo "<br/>";
-        $newTime = Carbon::createFromFormat('Y-m-d H:i:s', $test, 'Europe/Belgrade');
-        $newTime->setTimezone('Australia/Sydney');
 
-        echo $newTime." This is Belgrade to Sydney Conversion";
+        $user = User::find(1)->teams;
 
+        echo $user;
         
     }
 }
