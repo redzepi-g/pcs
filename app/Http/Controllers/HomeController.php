@@ -28,7 +28,12 @@ class HomeController extends Controller
     {
         $user_id = Auth::user()->id;
         $user = User::find($user_id);
+        $timezone = $user->timezone;
 
-        return view('home')->with('team',$user->team);
+        $time = Carbon::now();
+        $date = Carbon::createFromFormat('Y-m-d H:i:s', $time, 'Europe/Belgrade');
+        $date->setTimezone($timezone);
+
+        return view('home')->with('time',$date);
     }
 }

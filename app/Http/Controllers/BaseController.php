@@ -15,22 +15,29 @@ class BaseController extends Controller
     public function index(){
 
         
-        $meetings = User::find(1)->meetings;
+        // $meetings = User::find(1)->meetings;
 
-        foreach($meetings as $meeting){
+        // foreach($meetings as $meeting){
 
-            echo $meeting->team;
-            echo "<br/>";
-            echo $meeting->basetime;
-        }
+        //     echo $meeting->team;
+        //     echo "<br/>";
+        //     echo $meeting->basetime;
+        // }
 
-        echo "<br/>";
-        echo "-------------------------------";
-        echo "<br/>";
+        // echo "<br/>";
+        // echo "-------------------------------";
+        // echo "<br/>";
 
-        $user = User::find(1)->teams;
+        // $time = Carbon::now();
+        // $date = Carbon::createFromFormat('Y-m-d H:i:s', $time, $timezone);
 
-        echo $user;
+        
+        
+        // return view('welcome')->with('id',$id);
+
+        return view('auth.register');
+
+
         
     }
 }

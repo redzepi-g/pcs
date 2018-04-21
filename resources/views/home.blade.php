@@ -8,7 +8,7 @@
     <!-- basic user info -->
     <div class="col-md-12"> <!-- col start -->
         <h2>Welcome {{Auth::user()->name}}</h2>
-        <h5>You belong to Team: {{$team}}</h5>
+        <h5>You belong to Team: </h5>
         <!-- log out button -->
     <a class="dropdown-item" href="{{ route('logout') }}"
         onclick="event.preventDefault();
@@ -28,7 +28,7 @@
 
     <div class="col-md-12"><!-- sub col -->
         <div class="row"> <!-- sub row -->
-
+        <h3>{{$time}}</h3>
             <div class="col-md-6">
                 <button class="btn btn-primary">Create a team</button>
                 <button class="btn btn-primary">Join a team</button>

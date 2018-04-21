@@ -67,13 +67,15 @@
                             <label for="timezone" class="col-md-4 col-form-label text-md-right">{{ __('Timezone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="timezone" type="text" class="form-control{{ $errors->has('timezone') ? ' is-invalid' : '' }}" name="timezone" value="{{ old('timezone') }}" required >
 
-                                @if ($errors->has('timezone'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('timezone') }}</strong>
-                                    </span>
-                                @endif
+                                <select class="form-control" id="timezone-select" name="timezone">
+                                    <option value="America/New_York">America/New York</option>
+                                    <option value="America/Sao_Paulo">America/Sao Paulo</option>
+                                    <option value="Europe/Skopje">Europe/Skopje</option>
+                                    <option value="Africa/Johannesburg">Africa/Johannesburg</option>
+                                    <option value="Asia/Tokyo">Asia/Tokyo</option>
+                                </select>
+                                
                             </div>
                         </div>
 
