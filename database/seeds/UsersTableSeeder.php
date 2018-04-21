@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
     {
         $time= Carbon::now();
 
-        $gazmend = User::create(
+        User::create(
             [
                 'name' => 'Gazmend',
                 'email' => 'dexterr@live.com',
@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
             ]
             );
 
-        $dime = User::create(
+        User::create(
             [
                 'name' => 'Dime',
                 'email' => 'dime@live.com',
@@ -37,26 +37,59 @@ class UsersTableSeeder extends Seeder
             ]
             );
 
+            User::create(
+                [
+                    'name' => 'John',
+                    'email' => 'john@email.com',
+                    'password' => bcrypt('haha1122'),
+                    'timezone' => 'America/New_York'
+                ]
+                );
+    
+            User::create(
+                [
+                    'name' => 'Juan',
+                    'email' => 'juan@email.com',
+                    'password' => bcrypt('haha1122'),
+                    'timezone' => 'America/Sao_Paulo'
+                ]
+                );
+
+            User::create(
+                [
+                    'name' => 'Jerome',
+                    'email' => 'jerome@email.com',
+                    'password' => bcrypt('haha1122'),
+                    'timezone' => 'Africa/Johannesburg'
+                ]
+                );
+        
+            User::create(
+                [
+                    'name' => 'Matsumoto',
+                    'email' => 'matsumoto@email.com',
+                    'password' => bcrypt('haha1122'),
+                    'timezone' => 'Asia/Tokyo'
+                ]
+                );
+
+            User::create(
+                [
+                    'name' => 'Nikola',
+                    'email' => 'nikola@email.com',
+                    'password' => bcrypt('haha1122'),
+                    'timezone' => 'Europe/Skopje'
+                ]
+                );
+
         $teamArcanopulse = Team::create([
             'name' => 'Arcanopulse',
             'creator' => 'Dime',
         ]);
 
         $teamCodeguys = Team::create([
-            'name' => 'Codeguys',
+            'name' => 'Team Ten',
             'creator' => 'Gazmend',
-        ]);
-        
-        Meeting::create([
-            'team' => 'Arcanopulse',
-            'basetime' => $time,
-            'user_id' => $dime->id
-        ]);
-
-        Meeting::create([
-            'team' => 'Codeguys',
-            'basetime' => $time,
-            'user_id' => $gazmend->id
         ]);
         
     }
