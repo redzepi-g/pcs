@@ -13,7 +13,7 @@ class UsersTeam extends Migration
      */
     public function up()
     {
-        Schema::create('users_teams', function (Blueprint $table) {
+        Schema::create('team_user', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('user_id');
