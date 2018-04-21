@@ -1,0 +1,48 @@
+*{
+    font-family: "Dosis";
+}
+
+body{
+    background-image: url("../img/bkg.png");
+}
+
+.mainContainer{
+    margin-top: 40px;
+}
+
+.fixedNavbar{
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: rgb(208, 208, 208);
+}
+
+.hasBorder{
+    border-right: 2px solid rgb(161,161,161);
+    border-left: 2px solid rgb(161,161,161);
+}
+
+
+.fixedNavbar a{
+    display: inline-block;
+    font-size: 1.6em;
+    color: rgb(100,100,99);
+    padding-left: 3%;
+    padding-right: 3%;
+    height: 100%;
+}
+
+.leftSide, .rightSide{
+    width: 49%;
+    height: 100%;
+}
+
+.leftSide, .leftSide a{
+    float: left;
+}
+
+.rightSide, .rightSide a{
+    float: right;
+}

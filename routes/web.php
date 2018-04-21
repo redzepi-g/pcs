@@ -19,3 +19,14 @@ Route::get('/', [
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/MyTeams', [
+    'uses' => 'BaseController@myTeams',
+    'as' => 'myteams'
+]);
+
+Route::get('/TeamCalendar', [
+    'uses' => 'BaseController@teamCalendar',
+    'as' => 'teamCalendar'
+]);
+

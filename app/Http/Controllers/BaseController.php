@@ -36,8 +36,15 @@ class BaseController extends Controller
         // return view('welcome')->with('id',$id);
 
         return view('auth.register');
-
+        
 
         
+    }
+    public function myTeams(){
+        return view('myTeams');
+    }
+
+    public function teamCalendar(){
+        return view('teamCalendar');
     }
 }

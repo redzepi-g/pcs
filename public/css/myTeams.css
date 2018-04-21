@@ -1,0 +1,22 @@
+.teamsContainer{
+height: 100%;
+position: fixed;
+left: 0;
+width: 30%;
+padding-top: 2%;
+font-size: 1.85em;
+color: rgb(100,100,99);
+background: rgb(208, 208, 208);
+border-right: solid 2px rgb(161,161,161);
+box-sizing: border-box;
+border-top: solid 2px rgb(161,161,161);
+}
+
+.teamsContainer ul{
+    list-style: none;
+}
+
+.teamsContainer ul li::before{
+    display: inline;
+    content: "- ";
+}
