@@ -199,6 +199,14 @@ table{
     overflow-y: scroll;
     margin-bottom: 85px;
 }
+
+.taskTitleSpan, .timeSpan{
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
 .ulWrapper ul::-webkit-scrollbar {
     width: .5em;
 }
