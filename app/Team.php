@@ -10,5 +10,8 @@ class Team extends Model
         'name','creator','members','meetings','invitecode','created_at','updated_at'
     ];
 
+    public function tasks(){
 
+        return $this->belongsToMany('App\Task');
+    }
 }

@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\User;
 use App\Meeting;
 use App\Team;
+use App\Task;
 
 class UsersTableSeeder extends Seeder
 {
@@ -64,7 +65,7 @@ class UsersTableSeeder extends Seeder
                 ]
                 );
         
-            User::create(
+            $matsumoto = User::create(
                 [
                     'name' => 'Matsumoto',
                     'email' => 'matsumoto@email.com',
@@ -90,6 +91,39 @@ class UsersTableSeeder extends Seeder
         $teamCodeguys = Team::create([
             'name' => 'Team Ten',
             'creator' => 'Gazmend',
+        ]);
+
+        DB::table('team_user')->insert([
+            'team_id' => '1',
+            'user_id' => '7'
+        ]);
+
+        DB::table('team_user')->insert([
+            'team_id' => '2',
+            'user_id' => '7'
+        ]);
+
+        $taskone = Task::create([
+            'title' => 'Meet with Gazmend',
+            'basetime' => '2018-05-20 16:25:00',
+            'timezone' => $matsumoto->timezone
+        ]);
+        
+        $tasktwo = Task::create([
+            'title' => 'Meet with Gazmend',
+            'basetime' => $time,
+            'timezone' => $matsumoto->timezone
+            
+        ]);
+
+        DB::table('task_team')->insert([
+            'task_id' => $taskone->id,
+            'team_id' => '1'
+        ]);
+
+        DB::table('task_team')->insert([
+            'task_id' => $tasktwo->id,
+            'team_id' => '1'
         ]);
         
     }
