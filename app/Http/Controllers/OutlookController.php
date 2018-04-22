@@ -80,7 +80,7 @@ class OutlookController extends Controller
     </body>';
   echo "<div class='row'>
   <div class='col-md-6 mx-auto my-5 text-center'>";
-  echo "<form action='http://localhost/outlook/public/home/storeEvents' method='post'>
+  echo "<form action='http://localhost/pcs/public/home/storeEvents' method='post'>
 
     
     <input type='hidden' name='_token' value=";echo csrf_token(); echo ">
