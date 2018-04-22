@@ -156,9 +156,9 @@
     @if(Session::has('tasksExist'))
     
     <div class="tasksWrapper">
-        <h1 class="selectedDayHeader"><span class="selectedDay">{{$day}}</span></h1>
-        <h1 class="selectedMonthHeader">{{$month}}</h1>
-        <div class="ulWrapper">
+        <h1 class="selectedDayHeader taskWrapperContent"><span class="selectedDay">{{$day}}</span></h1>
+        <h1 class="selectedMonthHeader taskWrapperContent">{{$month}}</h1>
+        <div class="ulWrapper taskWrapperContent">
             <ul>
                 @foreach($tasks as $task)
                 <span style="display:none;">
@@ -171,7 +171,7 @@
                 @endforeach
             </ul>
         </div>
-        <div class="newTaskWrapper">
+        <div class="newTaskWrapper taskWrapperContent">
             <form action="">
                 <input type="text" placeholder="Add New Task . . .">
             </form>
@@ -267,4 +267,8 @@
     </div>
     @endif
 </div>
+@stop
+
+@section('customscripts')
+<script src="{{asset('js/teamCalendar.js')}}"></script>
 @stop
