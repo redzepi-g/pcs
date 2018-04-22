@@ -29,11 +29,12 @@
     <div class="fixedNavbar">
       <div class="leftSide">
         <a href="#" class="leftMargin" >My Schedule</a>
-        <a href="#" class="hasBorder" >My Teams</a>    
+        <a href="{{route('myteams', ['id' => Auth::user()->id])}}" class="hasBorder" >My Teams</a>    
+        <p>You are: {{Auth::user()->name}}</p>
       </div>
       <div class="rightSide">
         <a href="#">Logout</a>    
-        <a href="#" class="hasBorder" >Settings</a>
+        <a href="#" class="hasBorder">Settings</a>
       </div>
     </div>
 
