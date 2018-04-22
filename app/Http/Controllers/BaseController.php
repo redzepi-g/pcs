@@ -137,10 +137,11 @@ class BaseController extends Controller
         }
 
         if($arrTasks != NULL){
+            $request->session()->forget('noTasks');
             $request->session()->flash('tasksExist','we have found some tasks');
             
         }else{
-
+            $request->session()->flash('noTasks','no tasks found');
             $request->session()->forget('tasksExist');
 
         }
