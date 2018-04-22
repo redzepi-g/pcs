@@ -193,4 +193,30 @@ class BaseController extends Controller
         return redirect()->back();
 
     }
+
+    public function deleteTask($id){
+
+        $task = Task::destroy($id);
+        return redirect()->back();
+    }
+
+    public function moveTask($id,$day){
+        
+        $task = Task::find($id);
+        $basetimeOld = Carbon::createFromFormat('Y-m-d H:i:s', $task->basetime, $task->timezone);
+
+        $year = $basetimeOld->year;
+        $month = $basetimeOld->month;
+        $hour = $basetimeOld->hour;
+        $minute = $basetimeOld->minute;
+
+        $newTime = $year."-".$month."-".$day." ".$hour.":".$minute.":"."00";
+        $updatedTime = Carbon::createFromFormat('Y-m-d H:i:s', $newTime, $task->timezone);
+        
+
+        $task->basetime = $updatedTime;
+        $task->save();
+
+        return redirect()->back();
+    }
 }

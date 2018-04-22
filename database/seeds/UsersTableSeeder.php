@@ -103,28 +103,7 @@ class UsersTableSeeder extends Seeder
             'user_id' => '7'
         ]);
 
-        $taskone = Task::create([
-            'title' => 'Meet with Gazmend',
-            'basetime' => '2018-05-20 16:25:00',
-            'timezone' => $matsumoto->timezone
-        ]);
-        
-        $tasktwo = Task::create([
-            'title' => 'Meet with Gazmend',
-            'basetime' => $time,
-            'timezone' => $matsumoto->timezone
-            
-        ]);
-
-        DB::table('task_team')->insert([
-            'task_id' => $taskone->id,
-            'team_id' => '1'
-        ]);
-
-        DB::table('task_team')->insert([
-            'task_id' => $tasktwo->id,
-            'team_id' => '1'
-        ]);
+    
         
     }
 }

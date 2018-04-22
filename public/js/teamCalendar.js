@@ -36,13 +36,67 @@ $(() => {
     }
 
     initializeDroppable = () => {
-        let droppableTds = $('.calendarTable td');
+        let droppableTds = $('.dayATagField');
+
+        $('.trashcanWrapper').droppable({
+            over: function(event, ui){}
+        });
+
+        $('.trashcanWrapper').on('dropover', function(event, ui){
+            $(this).addClass('trashcanScale');
+        });
+
+        $('.trashcanWrapper').droppable({
+            out: function(event, ui){}
+        });
+
+        $('.trashcanWrapper').on('dropout', function(event, ui){
+            $(this).removeClass('trashcanScale');
+        });
+
+        $('.trashcanWrapper').droppable({
+            drop: function( event, ui ) {}
+        });
+
+        $('.trashcanWrapper').on('drop', function(event, ui){
+            $(this).removeClass('trashcanScale');
+            let deleteTask = $('.deleteTask');
+            let taskToDelete = ui.draggable[0];
+            let href = `http://localhost/pcs/public/delete-task-${parseInt($(taskToDelete).attr('dataid'))}`;
+
+            window.location.href = href;
+        });
+
         $.each(droppableTds, (index, td) => {
             $(td).droppable({
-                drop: (event, ui) => {
-                    console.log(ui);
-                }
+                over: function( event, ui ) {}
             });
+            $(td).on('dropover', function(event, ui){
+                $(this).addClass('droppableScale');
+            });
+            $(td).droppable({
+                out: function( event, ui ) {}
+            });
+            $(td).on('dropout', function(event, ui){
+                $(this).removeClass('droppableScale');
+            });
+
+            $(td).droppable({
+                drop: function( event, ui ) {}
+            });
+
+            $(td).on('drop', function(event, ui){
+                $(this).removeClass('droppableScale');
+                let tdFieldId = $(this).attr('id');
+                let task = ui.draggable[0];
+                let href = `http://localhost/pcs/public/move-task-${parseInt($(task).attr('dataid'))}-${parseInt(tdFieldId)}`;
+
+                window.location.href = href;
+                
+                
+            });
+
+
         });
     }
 

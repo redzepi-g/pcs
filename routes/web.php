@@ -68,4 +68,13 @@ Route::post('/task-create', [
     'as' => 'create-task'
 ]);
 
+Route::get('/delete-task-{id}',[
+    'uses' => 'BaseController@deleteTask',
+    'as' => 'delete-task'
+]);
+
+Route::get('/move-task-{id}-{day}',[
+    'uses' => 'BaseController@moveTask',
+    'as' => 'move-task'
+]);
 

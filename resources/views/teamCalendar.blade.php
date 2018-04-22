@@ -52,96 +52,123 @@
                     </td>
                     <td id="01" class="dayATagField noRightBorder">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '01'])}}">1</a>
+                        <a class="day-01" style="display:none;">01</a>
                     </td>
                 </tr>
 
                 <tr>
                     <td id="02"  class="dayATagField noLeftBorder">
                     <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '02'])}}">2</a>
-                    </td>
+                    <a class="day-02" style="display:none;">02</a>
+                </td>
                     <td id="03" class="dayATagField">
                     <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '03'])}}">3</a>
-                    </td>
+                    <a class="day-03" style="display:none;">03</a>
+                </td>
                     <td id="04" class="dayATagField">
                     <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '04'])}}">4</a>
-                    </td>
+                    <a class="day-04" style="display:none;">04</a>
+                </td>
                     <td id="05" class="dayATagField">
                     <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '05'])}}">5</a>
-                    </td>
+                    <a class="day-05" style="display:none;">05</a>
+                </td>
                     <td id="06" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '06'])}}">6</a>
+                        <a class="day-06" style="display:none;">06</a>
                     </td>
                     <td id="07" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '07'])}}">7</a>
+                        <a class="day-07" style="display:none;">07</a>
                     </td>
                     <td id="08" class="dayATagField noRightBorder">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '08'])}}">8</a>
+                        <a class="day-08" style="display:none;">08</a>
                     </td>
                 </tr>
 
                 <tr>
                     <td id="09" class="dayATagField noLeftBorder">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '09'])}}">9</a>
+                        <a class="day-09" style="display:none;">09</a>
                     </td>
                     <td id="10" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '10'])}}">10</a>
+                        <a class="day-10" style="display:none;">10</a>
                     </td>
                     <td id="11" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '11'])}}">11</a>
+                        <a class="day-11" style="display:none;">11</a>
                     </td>
                     <td id="12" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '12'])}}">12</a>
+                        <a class="day-12" style="display:none;">12</a>
                     </td>
                     <td id="13" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '13'])}}">13</a>
+                        <a class="day-13" style="display:none;">13</a>
                     </td>
                     <td id="14" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '14'])}}">14</a>
+                        <a class="day-14" style="display:none;">14</a>
                     </td>
                     <td id="15" class="dayATagField noRightBorder">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '15'])}}">15</a>
+                        <a class="day-15" style="display:none;">15</a>
                     </td>
                 </tr>
 
                 <tr>
                     <td id="16" class="dayATagField noLeftBorder">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '16'])}}">16</a>
+                        <a class="day-16" style="display:none;">16</a>
                     </td>
                     <td id="17" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '17'])}}">17</a>
+                        <a class="day-17" style="display:none;">17</a>
                     </td>
                     <td id="18" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '18'])}}">18</a>
+                        <a class="day-18" style="display:none;">18</a>
                     </td>
                     <td id="19" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '19'])}}">19</a>
+                        <a class="day-19" style="display:none;">19</a>
                     </td>
                     <td id="20" class="dayATagField">
                     <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '05', 'day' => '20'])}}">20</a>
-                    </td>
+                    <a class="day-20" style="display:none;">20</a>
+                </td>
                     <td id="21" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '21'])}}">21</a>
+                        <a class="day-21" style="display:none;">21</a>
                     </td>
                     <td id="22" class="dayATagField noRightBorder">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '22'])}}">22</a>
+                        <a class="day-22" style="display:none;">22</a>
                     </td>
                 </tr>
 
                 <tr class="lastRow">
                     <td id="23" class="dayATagField roundLeftBottom noLeftBorder">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '23'])}}">23</a>
+                        <a class="day-23" style="display:none;">23</a>
                     </td>
                     <td id="24" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '24'])}}">24</a>
+                        <a class="day-24" style="display:none;">24</a>
                     </td>
                     <td id="25" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '25'])}}">25</a>
+                        <a class="day-25" style="display:none;">25</a>
                     </td>
                     <td id="26" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '26'])}}">26</a>
+                        <a class="day-26" style="display:none;">26</a>
                     </td>
                     <td id="27" class="dayATagField">
                         <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '04', 'day' => '27'])}}">27</a>
+                        <a class="day-27" style="display:none;">27</a>
                     </td>
                     <td class="dayATagField">
                         <a href="#"><span class="invisibleAbc">ABC</span></a>
@@ -167,9 +194,13 @@
                     {{ $hour = $time->hour}}
                     {{ $minute = $time->minute}}
                 </span>
-                <li><span class="taskTitleSpan">{{$task->title}}</span><span class="timeSpan">{{sprintf('%02d', $hour).":".sprintf('%02d', $minute)}}</span></li>
+                <li dataId="{{$task -> id}}"><span class="taskTitleSpan">{{$task->title}}</span><span class="timeSpan">{{sprintf('%02d', $hour).":".sprintf('%02d', $minute)}}</span></li>
                 @endforeach
             </ul>
+        </div>
+        <div class="trashcanWrapper taskWrapperContent">
+            <i class="far fa-trash-alt"></i>
+            <a class="deleteTask" style="display:none"></a>
         </div>
         <div class="newTaskWrapper taskWrapperContent">
             <form action="{{route('create-task')}}" method="post">
