@@ -279,7 +279,7 @@
     @endif
 
     @if(Session::has('noTasks'))
-    <div style="display:none;" id="highlightDay">{{$day}}</div>
+    <div style="display:none;" id="hightlightDay">{{$day}}</div>
     <div class="tasksWrapper">
         <h1 class="selectedDayHeader taskWrapperContent"><span class="selectedDay">{{$day}}</span></h1>
         <h1 class="selectedMonthHeader taskWrapperContent">April</h1>

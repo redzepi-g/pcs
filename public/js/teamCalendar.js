@@ -1,6 +1,8 @@
 $(() => {
     initializeTasksWrapper = () => {
         let tasksWrapper = $('.tasksWrapper');
+        let selectedDayId = $('#hightlightDay').html();
+        $('#' + selectedDayId).addClass("highLightedDay");
         if (tasksWrapper.length != 0) {
             let calendarWrapper = $('.calendarWrapper');
             let calendarTd = $('.calendarWrapper td');

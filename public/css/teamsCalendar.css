@@ -302,6 +302,10 @@ table{
     transition: all .1s ease-out;
 }
 
+.highLightedDay{
+    background-color: rgb(97,81,62); 
+}
+
 
 /* ADDED CLASSES ON A DAY CLICK */
 .calendarWrapperShrink{
