@@ -45,5 +45,10 @@ Route::get('/redirect-{id}-{month}-{day}',[
     'as' => 'get-calendar-day-redirect'
 ]);
 
+//Create task in calendar
+Route::post('/task-create', [
+    'uses' => 'BaseController@createTask',
+    'as' => 'create-task'
+]);
 
 

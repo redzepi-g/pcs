@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
 use App\User;
 use App\Team;
+use App\Task;
 
 
 class BaseController extends Controller
@@ -119,7 +121,7 @@ class BaseController extends Controller
             $time_day = $day;
 
             //get the basetime of tasks
-            $basetime = Carbon::createFromFormat('Y-m-d H:i:s', $time, 'UTC');
+            $basetime = Carbon::createFromFormat('Y-m-d H:i:s', $time, 'Europe/Skopje');
             $basetime_month = $basetime->month;
             $basetime_day = $basetime->day;
 
@@ -129,6 +131,8 @@ class BaseController extends Controller
             if( ($basetime_month == $time_month) && ($basetime_day == $time_day)){
 
                 array_push($arrTasks, $task);
+
+                
             }
         }
 
@@ -147,5 +151,45 @@ class BaseController extends Controller
                                    ->with('day', $day)
                                    ->with('tasks',$arrTasks);
                                    
+    }
+
+    public function createTask(Request $request){
+        
+        $title = $request->title;
+        $teamId = $request->teamId;
+        $userId = $request->userId;
+        $month = $request->month;
+        $day = $request->day;
+        $hour = $request->hoursSelect;
+        $minute = $request->minutesSelect;
+
+        //find the user
+        $user = User::find($userId);
+        $userTimezone = $user->timezone;
+
+        //find the team
+        $team = Team::find($teamId);
+
+        //parse datetime
+        $time = "2018-".$month."-".$day." ".$hour.":".$minute.":00";
+
+        //normalize date time on user timezone
+        $userTime = Carbon::createFromFormat("Y-m-d H:i:s", $time, $userTimezone);
+
+       //create new task
+        $task = new Task();
+        $task->title = $title;
+        $task->basetime = $userTime;
+        $task->timezone = $userTimezone;
+        $task->save();
+
+        //update the m2m table
+        DB::table('task_team')->insert([
+            'task_id' => $task->id,
+            'team_id' => $teamId
+        ]);
+       
+        return redirect()->back();
+
     }
 }

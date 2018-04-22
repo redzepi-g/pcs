@@ -167,15 +167,22 @@
                     {{ $hour = $time->hour}}
                     {{ $minute = $time->minute}}
                 </span>
-                <li><span class="taskTitleSpan">{{$task->title}}</span><span class="timeSpan">{{$hour.":".$minute}}</span></li>
+                <li><span class="taskTitleSpan">{{$task->title}}</span><span class="timeSpan">{{sprintf('%02d', $hour).":".sprintf('%02d', $minute)}}</span></li>
                 @endforeach
             </ul>
         </div>
         <div class="newTaskWrapper taskWrapperContent">
-            <form action="">
-                <input type="text" placeholder="Add New Task . . .">
-            </form>
-            <select name="hoursSelect" id="hoursSelect">
+            <form action="{{route('create-task')}}" method="post">
+                @csrf
+                
+                <input type="hidden" name="userId" value="{{Auth::user()->id}}"/>
+                <input type="hidden" name="teamId" value="{{$team->id}}" />
+                <input type="hidden" name="month" value="{{$month}}" />
+                <input type="hidden" name="day" value="{{$day}}" />
+
+                <input type="text" placeholder="Add New Task . . ." name="title">
+
+                <select name="hoursSelect" id="hoursSelect">
                 <option value="00" default>00:</option>
                 <option value="01">01:</option>
                 <option value="02">02:</option>
@@ -202,15 +209,15 @@
                 <option value="23">23:</option>
             </select>
             <select name="minutesSelect" id="minutesSelect">
-                <option value="1" default>01</option>
-                <option value="2">02</option>
-                <option value="3">03</option>
-                <option value="4">04</option>
-                <option value="5">05</option>
-                <option value="6">06</option>
-                <option value="7">07</option>
-                <option value="8">08</option>
-                <option value="9">09</option>
+                <option value="01" default>01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
                 <option value="10">10</option>
                 <option value="11">11</option>
                 <option value="12">12</option>
@@ -263,6 +270,10 @@
                 <option value="59">59</option>
                 <option value="60">60</option>
             </select>
+
+
+            </form>
+            
         </div>
     </div>
     @endif
