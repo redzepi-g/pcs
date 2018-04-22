@@ -30,7 +30,7 @@
       <div class="leftSide">
         <a href="#" class="leftMargin" >My Schedule</a>
         <a href="{{route('myteams', ['id' => Auth::user()->id])}}" class="hasBorder" >My Teams</a>    
-        <p>You are: {{Auth::user()->name}}</p>
+        <a class="hasBorder" href="{{route('outlook-sign-in', ['id' => Auth::user()->id ])}}" role="button" id="connect-button">Connect to Outlook</a>
       </div>
       <div class="rightSide">
         <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>    

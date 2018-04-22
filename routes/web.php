@@ -11,6 +11,23 @@
 |
 */
 
+//OUTLOOK
+Route::get('/signin-{id}', [
+    'uses' => 'OutlookAuthController@signin',
+    'as' => 'outlook-sign-in'
+]);
+
+Route::get('home/authorize', 'OutlookAuthController@gettoken');
+
+
+Route::get('home/calendar', 'OutlookController@calendar')->name('calendar');
+
+Route::post('home/storeEvents', [
+    'uses' => 'OutlookController@storeEvents',
+    'as' => 'store-events'
+]);
+//OUTLOOK END
+
 Route::get('/', [
     'uses' => 'BaseController@index',
     'as' => 'index'
