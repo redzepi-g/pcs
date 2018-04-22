@@ -21,7 +21,7 @@
     position: absolute;
     letter-spacing: 2px;
     top: 0;
-    left: 25px;
+    left: 12px;
 }
 
 .absoluteSpan-year{
@@ -350,7 +350,7 @@ table{
 }
 
 .calendarMonthSpanShrink{
-    font-size: 2.2em;    
+    font-size: 1.2em;    
 }
 
 .calendarDayLabelShrink{

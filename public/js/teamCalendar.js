@@ -24,7 +24,7 @@ $(() => {
                 $(td).addClass('.calendarTdShrink')
             });
             calendarYearSpan.addClass('calendarYearSpanShrink');
-            calendarMonthSpan.addClass('calendarMonthSpanSHrink');
+            calendarMonthSpan.addClass('calendarMonthSpanShrink');
             $.each(calendarDayLabel, function (index, dayLabel) {
                 $(dayLabel).addClass('calendarDayLabelShrink');
             })

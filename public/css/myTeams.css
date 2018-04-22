@@ -16,6 +16,11 @@ border-top: solid 2px rgb(161,161,161);
     list-style: none;
 }
 
+.teamsContainer a, .teamsContainer a:hover{
+    color: rgb(100,100,99);
+}
+
+
 .teamsContainer ul li::before{
     display: inline;
     content: "- ";

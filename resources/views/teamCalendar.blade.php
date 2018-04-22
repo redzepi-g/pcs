@@ -10,7 +10,7 @@
         <table class="calendarTable">
             <thead>
                 <tr>
-                    <td class="theadTd monthLabel roundLeftTop"><span class="absoluteSpan-month">April</span></td>
+                    <td class="theadTd monthLabel roundLeftTop"><span class="absoluteSpan-month">Apr</span></td>
                     <td class="theadTd"><span class="invisibleAbc">ABC</span></td>
                     <td class="theadTd"><span class="invisibleAbc">ABC</span></td>
                     <td class="theadTd"><span class="invisibleAbc">ABC</span></td>
