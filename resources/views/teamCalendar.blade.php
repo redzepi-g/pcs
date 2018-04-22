@@ -270,5 +270,6 @@
 @stop
 
 @section('customscripts')
+<script src="{{asset('js/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
 <script src="{{asset('js/teamCalendar.js')}}"></script>
 @stop
