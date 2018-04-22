@@ -33,25 +33,25 @@
 
                 <tr>
                     <td class="dayATagField noLeftBorder">
-                        <a href="#"><span class="invisibleAbc">ABC</span></a>
+                        <a href="#" class="invisibleAbc"><span class="invisibleAbc">ABC</span></a>
                     </td>
                     <td class="dayATagField">
-                        <a href="#"><span class="invisibleAbc">ABC</span></a>
+                        <a href="#" class="invisibleAbc"><span class="invisibleAbc">ABC</span></a>
                     </td>
                     <td class="dayATagField">
-                        <a href="#"><span class="invisibleAbc">ABC</span></a>
+                        <a href="#" class="invisibleAbc"><span class="invisibleAbc">ABC</span></a>
                     </td>
                     <td class="dayATagField">
-                        <a href="#"><span class="invisibleAbc">ABC</span></a>
+                        <a href="#" class="invisibleAbc"><span class="invisibleAbc">ABC</span></a>
                     </td>
                     <td class="dayATagField">
-                        <a href="#"><span class="invisibleAbc">ABC</span></a>
+                        <a href="#" class="invisibleAbc"><span class="invisibleAbc">ABC</span></a>
                     </td>
                     <td class="dayATagField">
-                        <a href="#"><span class="invisibleAbc">ABC</span></a>
+                        <a href="#" class="invisibleAbc"><span class="invisibleAbc">ABC</span></a>
                     </td>
                     <td class="dayATagField noRightBorder">
-                        <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '05', 'day' => '01'])}}">1</a>
+                        <a href="#">1</a>
                     </td>
                 </tr>
 
@@ -117,7 +117,7 @@
                         <a href="#">19</a>
                     </td>
                     <td class="dayATagField">
-                    <a href="{{route('get-calendar-day', ['id' => $team->id, 'month' => '05', 'day' => '20'])}}">20</a>
+                        <a href="#">20</a>
                     </td>
                     <td class="dayATagField">
                         <a href="#">21</a>
@@ -144,31 +144,27 @@
                         <a href="#">27</a>
                     </td>
                     <td class="dayATagField">
-                        <a href="#"><span class="invisibleAbc">ABC</span></a>
+                        <a href="#" class="invisibleAbc"><span class="invisibleAbc">ABC</span></a>
                     </td>
                     <td class="dayATagField roundRightBottom noRightBorder">
-                        <a href="#"><span class="invisibleAbc">ABC</span></a>
+                        <a href="#" class="invisibleAbc"><span class="invisibleAbc">ABC</span></a>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    @if(Session::has('tasksExist'))
-    
     <div class="tasksWrapper">
-        <h1 class="selectedDayHeader"><span class="selectedDay">{{$day}}</span></h1>
-        <h1 class="selectedMonthHeader">{{$month}}</h1>
+        <h1 class="selectedDayHeader"><span class="selectedDay">20</span></h1>
+        <h1 class="selectedMonthHeader">April</h1>
         <div class="ulWrapper">
             <ul>
-                @foreach($tasks as $task)
-                <span style="display:none;">
-                    {{ $time = Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->basetime, $task->timezone) }}
-                    {{ $time->setTimezone(Auth::user()->timezone)}}
-                    {{ $hour = $time->hour}}
-                    {{ $minute = $time->minute}}
-                </span>
-                <li><span class="taskTitleSpan">{{$task->title}}</span><span class="timeSpan">{{$hour.":".$minute}}</span></li>
-                @endforeach
+                <li><input type="checkbox" class="checkBox"><span class="taskTitleSpan">Meet up at Codefest</span><span class="timeSpan">09:30</span></li>
+                <li><input type="checkbox" class="checkBox"><span class="taskTitleSpan">Pre-presentation meeting whatever sss</span><span class="timeSpan">12:30</span></li>
+                <li><input type="checkbox" class="checkBox"><span class="taskTitleSpan">Present our idea</span><span class="timeSpan">14:30</span></li>
+                <li><input type="checkbox" class="checkBox"><span class="taskTitleSpan">See the results</span><span class="timeSpan">16:30</span></li>
+                <li><input type="checkbox" class="checkBox"><span class="taskTitleSpan">See the results</span><span class="timeSpan">16:30</span></li>
+                <li><input type="checkbox" class="checkBox"><span class="taskTitleSpan">See the results</span><span class="timeSpan">16:30</span></li>
+                <li><input type="checkbox" class="checkBox"><span class="taskTitleSpan">See the results</span><span class="timeSpan">16:30</span></li>
             </ul>
         </div>
         <div class="newTaskWrapper">
@@ -265,6 +261,9 @@
             </select>
         </div>
     </div>
-    @endif
 </div>
+@stop
+
+@section('customscripts')
+<script src="{{asset('js/teamCalendar.js')}}"></script>
 @stop

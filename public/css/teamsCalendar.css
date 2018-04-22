@@ -54,7 +54,7 @@ td a{
 }
 
 .theadTd{
-    background-color: rgb(43, 30, 34);
+    background-color: rgb(43, 40, 34);
     border: none;  
 }
 
@@ -111,30 +111,7 @@ table{
     display: inline-block;
 }
 
-.calendarWrapper:hover{
-    margin-left: 5%;
-    width: 55%;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
 
-.calendarWrapper:hover > .calendarTable td{
-    font-size: 1.3em;
-    height: 62px;
-}
-
-.calendarWrapper:hover > .calendarTable .absoluteSpan-year{
-    font-size: 1.6em;
-}
-
-.calendarWrapper:hover > .calendarTable .absoluteSpan-month{
-    font-size: 2.2em;
-}
-
-.calendarWrapper:hover > .calendarTable .dayLabel{
-    font-size: .9em;
-    height: 20px;
-}
 
 .calendarWrapper::before{
     content: "";
@@ -159,21 +136,19 @@ table{
     transform: rotate(180deg);
 }
 
-.clearfix::after { 
-    content: " ";
-    display: block; 
-    height: 0; 
-    clear: both;
- }
-
 .invisibleAbc{
     opacity: 0;
+    visibility: hidden;
 }
 
 .tasksWrapper{
+    display: none;
+}
+
+.tasksWrapperShow{
     width: 35%;
     height: 100%;
-    padding: 2% 5%;
+    padding: 2% 2%;
     padding-top: 0;
     margin: 5% 0;
     background-image: url("../img/sidebkg.png");
@@ -182,6 +157,8 @@ table{
     background-position: center;
     margin-right: 5%;
     border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;    
+    padding-bottom: 3%;
 }
 
 .tasksWrapper .selectedDay{
@@ -217,7 +194,21 @@ table{
     max-height: 150px;
     overflow: hidden;
     overflow-y: scroll;
-    margin-bottom: 40.5%;
+    margin-bottom: 85px;
+}
+.ulWrapper ul::-webkit-scrollbar {
+    width: .5em;
+}
+ 
+.ulWrapper ul::-webkit-scrollbar-track {
+    background-color: rgba(103, 94, 79, 0.3);
+    border-radius: 20px;
+}
+ 
+.ulWrapper ul::-webkit-scrollbar-thumb {
+  background-color: rgba(103, 94, 79, 1);
+  border-radius: 20px;
+  outline: 1px solid rgba(103, 94, 79, 1);
 }
 
 .ulWrapper ul li{
@@ -228,6 +219,7 @@ table{
 
 .timeSpan{
     float: right;
+    padding-right:15px;
 }
 
 .taskTitleSpan{
@@ -239,10 +231,110 @@ table{
     position: absolute;
     top: 11px;
     left: 0;
+    border-radius: 2px;
+}
+
+.newTaskWrapper{
+    position: relative;
 }
 
 .newTaskWrapper input{
-    
+    width: 100%;
+    display: inline-block;
+    border: 7px solid rgb(133, 112, 85);
+    border-radius: 20px;
+    background-color: rgb(43, 40, 34);
+    line-height: 2em;
+    color: rgb(190, 179, 165);
+    font-size: 1em;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.newTaskWrapper input::-webkit-input-placeholder{
+    font-size: 1.3em;
+    font-weight: 600;
+    word-spacing: 1.5px;
+}
+
+.newTaskWrapper input:focus{
+    outline: none;
+}
+
+#hoursSelect, #minutesSelect{
+    width: 14%;
+    position: absolute;
+    top: 6px;
+    background: transparent;
+    border: none;
+    font-size: 1.3em;
+    color: rgb(190, 179, 165);
+    -webkit-appearance: none;
+}
+
+#hoursSelect:focus, #minutesSelect:focus{
+    outline: none;
+}
+
+#hoursSelect{
+    right:19px;
+    border-left: 2px solid rgb(190, 179, 165);
+    padding-left: 10px;
+}
+
+#minutesSelect{
+    right: -23px;
 }
 
 
+/* ADDED CLASSES ON A DAY CLICK */
+.calendarWrapperShrink{
+    margin-left: 5%;
+    width: 55%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.calendarTdShrink{
+    font-size: 1.3em;
+    height: 62px;
+}
+
+.calendarYearSpanShrink{
+    font-size: 1.6em;    
+}
+
+.calendarMonthSpanShrink{
+    font-size: 2.2em;    
+}
+
+.calendarDayLabelShrink{
+    font-size: .9em;
+    height: 20px;
+}
+
+/* .calendarWrapper:hover{
+    margin-left: 5%;
+    width: 55%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+} */
+
+/* .calendarWrapper:hover > .calendarTable td{
+    font-size: 1.3em;
+    height: 62px;
+} */
+
+/* .calendarWrapper:hover > .calendarTable .absoluteSpan-year{
+    font-size: 1.6em;
+} */
+
+/* .calendarWrapper:hover > .calendarTable .absoluteSpan-month{
+    font-size: 2.2em;
+} */
+
+/* .calendarWrapper:hover > .calendarTable .dayLabel{
+    font-size: .9em;
+    height: 20px;
+} */
+/* ADDED CLASSES ON A DAY CLICK */
